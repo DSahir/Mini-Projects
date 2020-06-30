@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link href="://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+</head>
+<style>
+    .winner{
+        color:rgb(229, 255, 0);
+    }
+    body{
+        background-color: #48beff;
+    }
+    .board{
+        border:#3dfaff 4px solid;
+        /* font-size: 3.5rem; */
+    }
+    .btn{
+        background-color: #3dfaff;
+    }
+    .btn:hover{
+        
+        background-color:#e9ecef;
+    
+    }
+    .jumbotron{
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+    .input-group-lg{
+        width: 50%;
+        /* height: 3.5em; */
+        font-size: 2rem;
+        color: #48beff;
+        border:#3dfaff 4px solid;
+    }
+    div{
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    p{
+        font-size: xx-large;
+    }
+
+</style>
+<body >
+    <div class="jumbotron d-flex justify-content-center display-4 ">The Scorekeeper</div>
+    <div class="container">
+        <div class="board d-flex justify-content-around "><h1 class="display-4 font-weight-bold"><span id="disp1">0</span> - <span id="disp2">0</span></h1></div>
+        <p class=" d-flex justify-content-center text-center font-weight-bold">Points of game  :<span class="upto"> 5</span> </p>
+        <div class="  d-flex justify-content-center ">
+            <input type="number" min="0" class="input-group-lg num" placeholder="Enter upto" value="5">
+        </div>
+        <div class=" d-flex justify-content-around">
+            <button type="button" class="btn btn-lg p1">Player One</button>
+            <button type="button" class="btn btn-lg p2">Player Two</button>
+        </div>
+        <div class=" d-flex justify-content-around">
+            <button type="button" class="btn btn-lg reset">Reset</button>
+        </div>
+        
+    </div>
+    
+    <script src="scorekeeper.js"></script>
+    <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
