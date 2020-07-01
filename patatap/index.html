@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello patatap</title>
+    <script type="text/javascript" src="./dist/paper-full.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js" ></script>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/paperscript" canvas="myCanvas">
+        var words = [];
+        var data = {
+            q: {
+                sound: new Howl({
+                src: ['sounds/bubbles.mp3']
+                }),
+                color: '#1abc9c'
+            },
+            w: {
+                sound: new Howl({
+                src: ['sounds/clay.mp3']
+                }),
+                color: '#2ecc71'
+            },
+            e: {
+                sound: new Howl({
+                src: ['sounds/confetti.mp3']
+                }),
+                color: '#3498db'
+            },
+            r: {
+                sound: new Howl({
+                src: ['sounds/corona.mp3']
+                }),
+                color: '#9b59b6'
+            },
+                t: {
+                sound: new Howl({
+                src: ['sounds/dotted-spiral.mp3']
+                }),
+                color: '#34495e'
+            },
+            y: {
+                sound: new Howl({
+                src: ['sounds/flash-1.mp3']
+                }),
+                color: '#16a085'
+            },
+            u: {
+                sound: new Howl({
+                src: ['sounds/flash-2.mp3']
+                }),
+                color: '#27ae60'
+            },
+            i: {
+                sound: new Howl({
+                src: ['sounds/flash-3.mp3']
+                }),
+                color: '#2980b9'
+            },
+            o: {
+                sound: new Howl({
+                    src: ['sounds/glimmer.mp3']
+                }),
+                color: '#8e44ad'
+            },
+            p: {
+                sound: new Howl({
+                src: ['sounds/moon.mp3']
+                }),
+                color: '#2c3e50'
+            },
+            a: {
+                sound: new Howl({
+                src: ['sounds/pinwheel.mp3']
+                }),
+                color: '#f1c40f'
+            },
+            s: {
+                sound: new Howl({
+                src: ['sounds/piston-1.mp3']
+                }),
+                color: '#e67e22'
+            },
+                d: {
+                sound: new Howl({
+                src: ['sounds/piston-2.mp3']
+                }),
+                color: '#e74c3c'
+            },
+            f: {
+                sound: new Howl({
+                src: ['sounds/prism-1.mp3']
+                }),
+                color: '#95a5a6'
+            },
+            g: {
+                sound: new Howl({
+                src: ['sounds/prism-2.mp3']
+                }),
+                color: '#f39c12'
+            },
+            h: {
+                sound: new Howl({
+                src: ['sounds/prism-3.mp3']
+                }),
+                color: '#d35400'
+            },
+            j: {
+                sound: new Howl({
+                src: ['sounds/splits.mp3']
+                }),
+                color: '#1abc9c'
+            },
+            k: {
+                sound: new Howl({
+                src: ['sounds/squiggle.mp3']
+                }),
+                color: '#2ecc71'
+            },
+            l: {
+                sound: new Howl({
+                src: ['sounds/strike.mp3']
+                }),
+                color: '#3498db'
+            },
+            z: {
+                sound: new Howl({
+                src: ['sounds/suspension.mp3']
+                }),
+                color: '#9b59b6'
+            },
+            x: {
+                sound: new Howl({
+                src: ['sounds/timer.mp3']
+                }),
+                color: '#34495e'
+            },
+            c: {
+                sound: new Howl({
+                src: ['sounds/ufo.mp3']
+                }),
+                color: '#16a085'
+            },
+            v: {
+                sound: new Howl({
+                src: ['sounds/veil.mp3']
+                }),
+                color: '#27ae60'
+            },
+            b: {
+                sound: new Howl({
+                src: ['sounds/wipe.mp3']
+                }),
+                color: '#2980b9'
+            },
+            n: {
+                sound: new Howl({
+                    src: ['sounds/zig-zag.mp3']
+                }),
+                color: '#8e44ad'
+            },
+            m: {
+                sound: new Howl({
+                src: ['sounds/moon.mp3']
+                }),
+                color: '#2c3e50'
+            }
+        };
+
+
+        function onKeyDown(event) {
+            var list = ['Mandarin:\nnǐ hǎo','Spanish:\nhola','English:\nhello','Hindi:\nnamaste','Arabic:\nmarhabaan','Portuguese:\nolá, oi, alô','Bengali:\nhyālō','Russian:\nprivet','Japanese:\nnichiwa','Punjabi:\nsata srī akāla','German:\nhallo, guten tag','Javanese:\nnggoleki','Wu (Shanghainese):\nnóng hō','Malay (Indonesian):\nselamat siang','Korean:\nannyeong haseyo','Telegu:\nhalō, vandanalu','Vietnamese:\nxin chào','French:\nbonjour','Marathi:\nnamaskār','Tamil:\nvaṇakkam','Urdu:\nassalam u alaikum','Persian (Farsi):\nsalām','Turkish:\nmerhaba','Cantonese:\nnǐ hǎo','Italy:\nciao','Thai:\nsà-wàt-dii','Gujarati:\nnamaste','Basque:\nkaixo','Minnan:\nlı́ hó','Polish:\ncześć’','Pashto:\nsalam','Kannada:\nnamaskāra','Malayalam:\nhalēā','Sundanese:\nsampurasun','Chamorro:\nhafa adai','Hausa:\nsannu','Burmese:\nmin-ga-la-ba','Oriya:\nnamaskar','Armenian:\nbarev','Ukranian:\ndobryj den','Bhojpuri:\nprannam','Tagalog:\nkamusta','Yoruba:\ne nle o','Maithili:\nprannam','Sindhi:\nassalam o alaikum','Swahili:\nhabari','Uzbek:\nsalom','Amharic:\nselam','Fula:\nmihofnima','Igbo:\nkedu','Oromo:\nakkam','Romanian:\nbună','Azerbaijani:\nsalam','Manipuri/Meitei:\nkhurumjari','Awadi:\nvanakkam','Cebuano:\nkumusta','Dutch:\nhallo','Kurdish:\nslaw','Serbo-Croatian:\nzdravo','Malagasy:\nsalama','Nepali:\nnamaste','Sinhalese:\nayubowan','Bambara:\ni ni ce','Assamese:\nnamaskhar','Somali:\nsalaam alaykum','Dogri:\nke aal aee','Marwari:\nkhammaghani','Hungarian:\nszia','Chewa:\nmoni','Greek:\nyasou','Khasi:\nkumno','Kazakh:\nsälem','Tswana:\ndumela rra','Hebrew:\nshalom','Zulu:\nsawubona','Czech:\nahoj','Kinyarwanda:\nmuraho','Konkani:\ndeu boro dis dium','Haitian Creole:\nbonjou ','Min Dong:\nnü hou','Swedish:\nhej','Hmong:\nnyob zoo','Shona:\nmhoro','Hiligaynon:\nhello','Uyghur:\nyaxshimusiz','Belarusian:\ndobry dzień','Mossi:\nne y windiga','Xhosa:\nmholweni:\n' ]
+            if(data[event.key]){
+                var maxpt = new Point(view.size.width , view.size.height);
+                var randpt = Point.random();
+                var pt = maxpt * randpt;
+                if(pt.x<100){
+                    pt.x+=280;
+                }if(pt.y<100){
+                    pt.y+=280;
+                }if(pt.x> (view.size.width-100)){
+                    pt.x-=330;
+                }if(pt.y> (view.size.height-100)){
+                    pt.y-=400;
+                }
+                var hola = new PointText({
+                    point: pt,
+                    justification:'center',
+                    fontSize: 490,
+                    fontWeight:"bolder"
+                });
+                hola.fillColor = data[event.key].color;
+                hola.content = list[Math.floor(Math.random()*list.length)];
+                data[event.key].sound.play();
+                words.push(hola);
+                
+            }
+ 
+        }
+        
+        function onFrame(e){
+            for(var i = 0; i< words.length;i++){
+                words[i].fillColor.hue+=1;
+                words[i].scale(.985);
+                if(words[i].fontSize < 1){
+                    words[i].remove();
+                  words.splice(i, 1);
+        
+                }
+            }
+        }
+        
+        
+    </script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
